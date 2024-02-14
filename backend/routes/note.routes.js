@@ -18,7 +18,7 @@ noteRouter.post("/create", auth, async(req, res)=>{
 })
 
 
-noteRouter.get("/read", auth, async(req, res)=>{
+noteRouter.get("/", auth, async(req, res)=>{
     try {
         const notes = await NoteModel.find({userID:req.body.userID})
         res.status(200).send({notes});
